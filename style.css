@@ -1,0 +1,144 @@
+git/* ═══════════════════════════════════════════════════════════════
+   CineBot — style.css  |  Clean White Theme - TRUE CENTER VERSION
+   2 Colors only: #ffffff (white) + #7c3aed (purple accent)
+   All text: #111111 (near black)
+═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ═══ CHAT INPUT - TRUE FLOATING CENTER ALIGNMENT ═══ */
+/* This targets the outer fixed wrapper from Streamlit */
+section[data-testid="stBottom"],
+[data-testid="stBottomBlockContainer"] {
+    position: fixed !important;
+    bottom: 25px !important; /* Lifts it off the edge for a floating look */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100% !important;
+    max-width: 720px !important; /* Matches main content width */
+    background: transparent !important; /* Makes the wrapper invisible */
+    z-index: 999999 !important;
+    display: flex !important;
+    justify-content: center !important;
+    border: none !important;
+}
+
+/* The actual white pill container */
+[data-testid="stChatInputContainer"] {
+    background: #ffffff !important;
+    border: 2px solid #a78bfa !important;
+    border-radius: 30px !important;
+    box-shadow: 0 8px 32px rgba(124,58,237,0.2) !important;
+    width: 100% !important;
+    padding: 2px 10px !important;
+}
+
+/* Force text alignment inside the pill */
+[data-testid="stChatInput"] textarea {
+    background: transparent !important;
+    color: #111111 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    padding: 10px 5px !important;
+    caret-color: #7c3aed !important;
+}
+
+/* Submit button styling */
+button[data-testid="stChatInputSubmitButton"] {
+    background: #7c3aed !important;
+    border-radius: 50% !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin-right: 5px !important;
+}
+
+/* ── LAYOUT & SPACING ── */
+/* Prevents content from getting hidden behind the floating input */
+.main .block-container,
+[data-testid="stMainBlockContainer"],
+[data-testid="stChatMessageContainer"] {
+    padding-bottom: 160px !important;
+}
+
+/* ── ROOT THEME VARIABLES ── */
+:root {
+    --bg:      #ffffff;
+    --accent:  #7c3aed;
+    --text:    #111111;
+    --border:  #ddd6fe;
+}
+
+/* ── FULL WHITE BACKGROUND ── */
+html, body,
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewContainer"] > section,
+[data-testid="stMainBlockContainer"],
+.main .block-container {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+[data-testid="stHeader"] { background: transparent !important; }
+
+/* ── TEXT & TITLES ── */
+* { color: #111111 !important; }
+
+h1 {
+    font-family: 'Cinzel', serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 3px !important;
+    color: var(--accent) !important;
+    -webkit-text-fill-color: var(--accent) !important;
+}
+
+/* ── SIDEBAR ── */
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] > div {
+    background: #f5f3ff !important;
+    border-right: 2px solid #ddd6fe !important;
+}
+
+/* ── LEADERBOARD ENTRIES ── */
+.lb-entry {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px; border-radius: 12px; margin: 6px 0;
+    background: #ffffff;
+    border: 1px solid #ddd6fe;
+    transition: transform 0.2s;
+}
+.lb-entry:hover {
+    transform: translateX(4px);
+    border-color: #a78bfa;
+}
+
+/* ── VERDICT CARD ── */
+.verdict-card {
+    background: #f5f3ff;
+    border: 2px solid #a78bfa;
+    border-radius: 20px;
+    padding: 25px; margin: 15px 0;
+    box-shadow: 0 4px 20px rgba(124,58,237,0.1);
+    position: relative;
+}
+.verdict-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: #7c3aed;
+}
+
+/* ── STATS & PILLS ── */
+.stat-badge {
+    flex:1; padding:10px; border-radius:12px;
+    text-align:center; font-weight:700;
+}
+.stat-pos { background:#ecfdf5; border:1px solid #6ee7b7; color:#059669 !important; }
+.stat-neg { background:#fef2f2; border:1px solid #fca5a5; color:#dc2626 !important; }
+
+.review-pill {
+    display:inline-block; padding:8px 16px; border-radius:50px;
+    margin:4px 2px; font-size:0.85rem;
+    border: 1px solid #ddd6fe;
+}

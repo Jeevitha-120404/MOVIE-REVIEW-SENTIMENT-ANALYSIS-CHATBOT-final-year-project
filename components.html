@@ -1,0 +1,76 @@
+<!--
+  CineBot — components.html  |  Python HTML Templates
+  Used in app.py as f-string templates (not browser HTML)
+  VS Code may show warnings for {placeholders} — that is normal, ignore them
+-->
+
+<!-- VERDICT CARD -->
+<!-- verdict_card(emoji, title, sub, total) -->
+<div class="verdict-card">
+    <span class="verdict-emoji">{emoji}</span>
+    <span class="verdict-title">{title}</span><br>
+    <span class="verdict-sub">{sub} &bull; {total} reviews analysed</span>
+</div>
+
+<!-- STAT ROW -->
+<!-- stat_row(pos, neg, neu) -->
+<div class="stat-row">
+    <div class="stat-badge stat-pos">😄 {pos}%<span class="stat-label">Positive</span></div>
+    <div class="stat-badge stat-neg">😡 {neg}%<span class="stat-label">Negative</span></div>
+    <div class="stat-badge stat-neu">😐 {neu}%<span class="stat-label">Neutral</span></div>
+</div>
+
+<!-- META ROW -->
+<!-- meta_row(actor, director, genre, year) -->
+<div class="meta-row">
+    <span class="meta-tag">🎭 <span>Actor:</span> <strong>{actor}</strong></span>
+    <span class="meta-tag">🎬 <span>Director:</span> <strong>{director}</strong></span>
+    <span class="meta-tag">🎭 <span>Genre:</span> <strong>{genre}</strong></span>
+    <span class="meta-tag">📅 <span>Year:</span> <strong>{year}</strong></span>
+</div>
+
+<!-- REVIEW PILL -->
+<!-- review_pill(text, css_class, conf) -->
+<div class="review-pill {css_class}">{short_text} <strong>({conf}%)</strong></div>
+
+<!-- HIGHLIGHT CARD -->
+<!-- highlight_card(text, css_class, label, conf) -->
+<div class="highlight-card {css_class}">
+    <span class="highlight-label">{label}</span>
+    <div class="highlight-text">"{text}"</div>
+    <span class="highlight-conf">Confidence: {conf}%</span>
+</div>
+
+<!-- CONFIDENCE BAR -->
+<!-- conf_bar(label, pct, color) -->
+<div class="conf-row">
+    <div class="conf-label"><span>{label}</span><span>{pct}%</span></div>
+    <div class="conf-bar-wrap">
+        <div class="conf-bar" style="width:{pct}%;background:{color};box-shadow:0 0 10px {color}88;"></div>
+    </div>
+</div>
+
+<!-- WINNER BANNER -->
+<!-- winner_banner(winner, diff) -->
+<div class="winner-banner">
+    <span class="winner-trophy">🏆</span>
+    <div class="winner-title">{winner} WINS!</div>
+    <div class="winner-sub">{diff}% more positive reviews 🎉</div>
+</div>
+
+<!-- MOVIE LIST CARD -->
+<!-- movie_list_card(emoji, name, meta, score) -->
+<div class="movie-list-card">
+    <span class="movie-list-icon">{emoji}</span>
+    <span class="movie-list-name">{name}</span>
+    <span class="movie-list-meta">{meta}</span>
+    <span class="movie-list-score">{score}</span>
+</div>
+
+<!-- SECTION DIVIDER -->
+<!-- sec_div(label) -->
+<div class="section-div">
+    <div class="section-div-line"></div>
+    {label}
+    <div class="section-div-line"></div>
+</div>
